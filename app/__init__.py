@@ -34,7 +34,8 @@ def pdns_utils(config_name):
         """ Query for next available IP in zone """
         if request.query_string:
             ra = request.args.to_dict()
-
+        else:
+            ra = dict()
         # Verify we got zone and origin
         if all(x in ra.keys() for x in ['zone', 'origin']):
             origin, zone, get_all = ra['origin'], \

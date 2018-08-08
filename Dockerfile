@@ -1,7 +1,5 @@
 FROM docker.marqeta.com/mq/alp-py36-min:latest
 
-EXPOSE 6000
-
 ADD app /srv/app
 ADD instance /srv/instance
 ADD requirements.txt uwsgi.ini run.py /srv/
