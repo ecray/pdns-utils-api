@@ -1,0 +1,20 @@
+pipeline:
+  test:
+    image: docker.marqeta.com/mq/alp-py36-min:latest
+    commands:
+      - apk add -u --no-cache --virtual .build-deps gcc python3-dev build-base linux-headers
+      - python3.6 -m venv /srv/venv 
+      - source /srv/venv/bin/activate
+      - pip install -r requirements.txt
+      - python tests.py 
+
+  publish:
+    image: plugins/docker
+    repo: docker.marqeta.com/mq/devops/pdns-utils
+    registry: docker.marqeta.com
+    secrets: [ docker_username, docker_password ]
+    tags:
+      - ${DRONE_TAG}
+      - latest
+    when:
+      event: tag
