@@ -5,7 +5,6 @@ pipeline:
       - PDNS_API_KEY=${PDNS_API_KEY}
     secrets: [ pdns_api_key ]
     commands:
-      - env
       - apk add -u --no-cache --virtual .build-deps gcc python3-dev build-base linux-headers
       - python3.6 -m venv /srv/venv 
       - source /srv/venv/bin/activate
