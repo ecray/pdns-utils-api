@@ -17,6 +17,7 @@ pipeline:
     repo: docker.marqeta.com/mq/devops/pdns-utils
     registry: docker.marqeta.com
     secrets: [ docker_username, docker_password ]
+    custom_dns: [ 10.35.4.82, 10.35.4.81 ]
     tags:
       - ${DRONE_TAG}
       - latest
