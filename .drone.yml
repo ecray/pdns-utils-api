@@ -4,7 +4,6 @@ pipeline:
     environment:
       - PDNS_API_KEY=${PDNS_API_KEY}
     secrets: [ pdns_api_key ]
-    custom_dns: [ 10.35.4.82, 10.35.4.81 ]
     commands:
       - env
       - apk add -u --no-cache --virtual .build-deps gcc python3-dev build-base linux-headers
