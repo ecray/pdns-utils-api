@@ -1,6 +1,6 @@
 pipeline:
   test:
-    image: docker.marqeta.com/mq/alp-py36-min:latest
+    image: alp-py36-min:latest
     environment:
       - PDNS_API_KEY=${PDNS_API_KEY}
     secrets: [ pdns_api_key ]
@@ -13,10 +13,10 @@ pipeline:
 
   publish:
     image: plugins/docker
-    repo: docker.marqeta.com/mq/devops/pdns-utils
-    registry: docker.marqeta.com
+    repo: pdns-utils
+    registry: my.docker-repo.com
     secrets: [ docker_username, docker_password ]
-    custom_dns: [ 10.35.4.82, 10.35.4.81 ]
+    custom_dns: [ 10.x.x.x, 10.8.x.x ]
     tags:
       - ${DRONE_TAG}
       - latest
