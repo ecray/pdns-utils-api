@@ -20,7 +20,7 @@ try:
 except LookupError:
     logger.debug(f"Missing API_KEY from environment")
 
-URI = 'https://pdns-api.marqeta.com/api/v1/servers/localhost/zones'
+URI = 'https://pdns-api.example.com/api/v1/servers/localhost/zones'
 HEADERS = {'X-API-Key': API_KEY}
 
 

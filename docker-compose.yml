@@ -1,7 +1,7 @@
 version: '3'
 services:
   api:
-    image: docker.marqeta.com/mq/devops/pdns-utils
+    image: pdns-utils
     ports:
         - "<ipaddr>:6000:5000"
     environment:

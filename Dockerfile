@@ -1,4 +1,4 @@
-FROM docker.marqeta.com/mq/alp-py36-min:latest
+FROM alp-py36-min:latest
 
 ADD app /srv/app
 ADD instance /srv/instance

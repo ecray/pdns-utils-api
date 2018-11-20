@@ -7,7 +7,7 @@ class TestFunction(unittest.TestCase):
     def setUp(self):
         self.app = pdns_utils(config_name="testing")
         self.client = self.app.test_client
-        self.zone = 'las1.marqeta.com'
+        self.zone = 'my.example.com'
         self.origin = '10.35.4'
 
     def test_fetch(self):
